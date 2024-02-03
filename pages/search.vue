@@ -1,8 +1,9 @@
 <script setup>
 const search = ref("hello");
 const { data, refresh } = await useAsyncData(
-  ["search", search.value].join(),
-  () => searchContent(search, {})
+  ["search"].join(),
+  () => searchContent(search, {}),
+  { watch: [search] }
 );
 </script>
 
