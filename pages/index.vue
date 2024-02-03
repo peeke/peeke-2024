@@ -1,7 +1,8 @@
 <script setup>
 const { data } = await useAsyncData("index", () =>
-  queryContent("articles").sort({ _id: -1 }).find()
+  queryContent().sort({ _id: -1 }).only(['_path', 'title']).find()
 );
+
 </script>
 
 <template>
